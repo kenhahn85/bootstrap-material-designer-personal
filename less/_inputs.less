@@ -24,7 +24,7 @@ select[multiple].form-control {
 .form-control {
   border: 0;
   background-image: linear-gradient(@primary, @primary), linear-gradient(#D2D2D2, #D2D2D2);
-  background-size: 0 2px, 100% 1px;
+  background-size: 0 3px, 100% 1px;
   background-repeat: no-repeat;
   background-position: center bottom, center calc(~"100% - 1px");
   background-color: transparent;
@@ -43,7 +43,7 @@ fieldset[disabled] .form-control:disabled, .form-control-wrapper .form-control:d
   background-image: linear-gradient(@primary, @primary), linear-gradient(#D2D2D2, #D2D2D2);
   animation: input-highlight 0.5s forwards;
   box-shadow: none;
-  background-size: 0 2px, 100% 1px;
+  background-size: 0 3px, 100% 1px;
 }
 
 
@@ -60,10 +60,11 @@ fieldset[disabled] .form-control:disabled, .form-control-wrapper .form-control:d
     transition: 0.2s ease all;
     opacity: 0;
   }
-  .form-control:not(.empty) ~ .floating-label {
+  .form-control:not(.empty) ~ .floating-label, .form-control:focus ~ .floating-label {
     top: -10px;
     font-size: 10px;
     opacity: 1;
+    color: @primary;
   }
   .form-control:focus:invalid ~ .floating-label, .form-control.focus:invalid ~ .floating-label {
     color: @input-danger;
@@ -190,11 +191,11 @@ select.form-control {
 
 @keyframes input-highlight {
   0% {
-    background-size: 0 2px, 100% 1px;
+    background-size: 0 3px, 100% 1px;
   }
 
   100% {
-    background-size: 100% 2px, 100% 1px;
+    background-size: 100% 3px, 100% 1px;
   }
 }
 
